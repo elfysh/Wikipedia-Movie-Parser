@@ -9,4 +9,3 @@ df['director'] = df['director'].str.split(',').str.get(0)
 
 # Форматируем жанры
 df['genre'] = df['genre'].str.split('|').apply(lambda x: ','.join([genre.capitalize() for genre in x]))
-print(df)
