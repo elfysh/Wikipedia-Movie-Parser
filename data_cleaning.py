@@ -9,3 +9,7 @@ df['director'] = df['director'].str.split(',').str.get(0)
 
 # Форматируем жанры
 df['genre'] = df['genre'].str.split('|').apply(lambda x: ','.join([genre.capitalize() for genre in x]))
+
+#Сохраняем в json
+df['year'] = df['year'].astype(int)
+df.to_json('data_cleaned.json', orient='records', force_ascii=False)
